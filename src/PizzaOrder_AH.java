@@ -37,7 +37,7 @@ public class PizzaOrder_AH {
         firstName = keyboard.nextLine();
 
         /*
-        * Determine if user is eligible for discount by
+        * TODO: Determine if user is eligible for discount by
         * having the same first name as one of the owners
         */
 
@@ -53,7 +53,7 @@ public class PizzaOrder_AH {
 
         // Set price and size of pizza ordered
 
-        // ADD LINES HERE FOR TASK #2
+        // TODO: Add lines for task 2 here
 
         // Consume the remaining newline character
         keyboard.nextLine();
@@ -119,12 +119,14 @@ public class PizzaOrder_AH {
         System.out.println(" " + crust + " crust");
         System.out.println(" " + toppings);
 
-        //apply discount if user is eligible
+        // TODO: Apply discount if user is eligible
 
-        // ADD LINES FOR TASK #4 HERE
+        // TODO: Add lines for task 4 here.
 
-        //EDIT PROGRAM FOR TASK #5
-        //SO ALL MONEY OUTPUT APPEARS WITH 2 DECIMAL PLACES
+        /*
+         * TODO: Edit program for task 5.
+         * Insure all amouts are in dollar format (2 decimal places).
+         */
 
         System.out.println("\nThe cost of your order is: " + dollar.format(cost));
 
