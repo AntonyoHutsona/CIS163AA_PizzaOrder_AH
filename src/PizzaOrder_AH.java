@@ -180,7 +180,7 @@ public class PizzaOrder_AH {
 		 */
 		DecimalFormat dollar = new DecimalFormat("$##0.00");
 
-        System.out.println("\nThe cost of your order is: " + dollar.format(cost));
+    System.out.println("\nThe cost of your order is: " + dollar.format(cost));
 
         //calculate and display tax and total cost
         tax = cost * TAX_RATE;
