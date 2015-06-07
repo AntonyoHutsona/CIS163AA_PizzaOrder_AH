@@ -30,7 +30,7 @@ public class PizzaBuild {
 	}
 
 	/**
-	 * This methos sets the crust type from user input
+	 * This method sets the crust type from user input
 	 * @param crustType
 	 */
 	public void setCrustType(char crustType) {
