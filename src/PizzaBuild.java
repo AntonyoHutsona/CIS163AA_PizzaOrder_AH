@@ -1,5 +1,5 @@
 /**
- * PizzaOrder_Hutsona_A
+ * This class sets the build of the pizza based on user input
  * Created by ahutsona
  * On 6/6/15
  * At 6:39 AM

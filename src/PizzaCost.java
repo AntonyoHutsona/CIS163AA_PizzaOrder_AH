@@ -1,5 +1,5 @@
 /**
- * PizzaOrder_Hutsona_A
+ * This class will calculate the cost of a pizza based on the build on the pizza
  * Created by ahutsona
  * On 6/6/15
  * At 6:37 AM
