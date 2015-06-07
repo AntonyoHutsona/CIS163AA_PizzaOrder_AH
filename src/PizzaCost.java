@@ -12,23 +12,44 @@ public class PizzaCost {
 	// PizzaBuild object, used to calculate cost based on build of pizza
 	PizzaBuild pizzaBuild = new PizzaBuild();
 
+	/**
+	 * Sets the discount
+	 * @param isDiscountValid
+	 */
 	public void setIsDiscountValid(boolean isDiscountValid) {
 		this.isDiscountValid = isDiscountValid;
 	}
 
+	/**
+	 * This is a flag used to determine is the discount should be applied
+	 * @return isDiscountValid
+	 */
 	public boolean getIsDiscountValid() {
 		return isDiscountValid;
 	}
 
+	/**
+	 * This method calculates the sales tax of the pizza
+	 * @return tax the sales tax
+	 */
 	public double getTax() {
 		tax = (cost * TAX_RATE);
 		return tax;
 	}
 
+	/**
+	 * This will return the applicable discount amount
+	 * @return discountReduction the amount of discount
+	 */
 	public double getDiscountReduction() {
 		return discountReduction = DISCOUNT_REDUCTION ;
 	}
 
+	/**
+	 * This will calculate the cost of the pizza including tax and
+	 * applicable discounts
+	 * @return cost the cost of pizza
+	 */
 	public double getPizzaCost() {
 		switch (pizzaBuild.getSizeOfPizza()) {
 			case 10 :
@@ -50,6 +71,11 @@ public class PizzaCost {
 
 		return cost += (TOPPING_PRICE * pizzaBuild.getNumberOfToppings());
 	}
+
+	/**
+	 * This method returnes the woralcost of the pizza including extra toppings and tax
+	 * @return totalCostOfPizza the cost of a pizza including extra toppings and tax
+	 */
 	public double getTotalCostOfPizza() {
 		double totalCostOfPizza = cost + tax;
 		return totalCostOfPizza;

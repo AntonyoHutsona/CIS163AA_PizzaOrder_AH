@@ -23,9 +23,8 @@ public class PizzaOrder_Hutsona_A {
         String firstName = keyboard.nextLine();
 
 		/*
-        * TODO: Determine if user is eligible for discount by
-        * having the same first name as one of the owners
-        */
+         * having the same first name as one of the owners
+         */
 		if (firstName.equalsIgnoreCase("Mike") || firstName.equalsIgnoreCase("Diane")) {
 			//isDiscountValid = true;
 			pizzaCost.setIsDiscountValid(true);
@@ -68,9 +67,13 @@ public class PizzaOrder_Hutsona_A {
 			case 'T':
 				pizzaCost.pizzaBuild.setCrustType('T');
 				break;
+			case 'h':
+			case 'H':
+				pizzaCost.pizzaBuild.setCrustType('H');
+				break;
 			default:
 				pizzaCost.pizzaBuild.setCrustType('H');
-				System.out.printf("%nYour input was not a valid, Hand-tossed was chosen for you.%n%n");
+				System.out.printf("%nYour input was not a valid, Hand-tossed was chosen for you.%n");
 				break;
 		}
 
@@ -78,7 +81,7 @@ public class PizzaOrder_Hutsona_A {
 		 * Prompt user about default toppings, additional cost per
 		 * topping, and available toppings
          */
-		System.out.println("All pizzas come with cheese.");
+		System.out.println("\nAll pizzas come with cheese.");
         System.out.println("Additional toppings are $1.25 each, choose " +
 						   "from Pepperoni, Sausage, Onion, Mushroom" + "\n");
 
@@ -91,35 +94,35 @@ public class PizzaOrder_Hutsona_A {
         input = keyboard.nextLine();
         char choice = input.charAt(0);
         if (choice == 'Y' || choice == 'y') {
-			pizzaCost.pizzaBuild.setToppings("Pepperoni ");
+			pizzaCost.pizzaBuild.setToppings(", Pepperoni");
         }
 
         System.out.print("Do you want Sausage? (Y/N): ");
         input = keyboard.nextLine();
         choice = input.charAt(0);
         if (choice == 'Y' || choice == 'y') {
-			pizzaCost.pizzaBuild.setToppings("Sausage ");
+			pizzaCost.pizzaBuild.setToppings(", Sausage");
         }
 
         System.out.print("Do you want Onion? (Y/N): ");
         input = keyboard.nextLine();
         choice = input.charAt(0);
         if (choice == 'Y' || choice == 'y') {
-			pizzaCost.pizzaBuild.setToppings("Onion ");
+			pizzaCost.pizzaBuild.setToppings(", Onion");
         }
 
         System.out.print("Do you want Mushroom? (Y/N): ");
         input = keyboard.nextLine();
         choice = input.charAt(0);
         if (choice == 'Y' || choice == 'y') {
-			pizzaCost.pizzaBuild.setToppings("Mushroom ");
+			pizzaCost.pizzaBuild.setToppings(", Mushroom");
         }
 
         //display order confirmation
         System.out.println("\nYour order is as follows:");
         System.out.println("\t" + pizzaCost.pizzaBuild.getSizeOfPizza() + " inch pizza");
         System.out.println("\t" + pizzaCost.pizzaBuild.getCrust() + " crust");
-        System.out.println("\t" + pizzaCost.pizzaBuild.getToppings());
+        System.out.println("\t" + pizzaCost.pizzaBuild.getToppings() + " as your toppings");
 
         //DecimalFormat object, format amounts to currency
 		DecimalFormat dollar = new DecimalFormat("$##0.00");
@@ -128,12 +131,15 @@ public class PizzaOrder_Hutsona_A {
 		 * display cost, tax, total cost and discount if applicable
 		 */
 		if (pizzaCost.getIsDiscountValid()) {
-			System.out.printf("%nCongratulations you're eligible for a %s discount.",
-					dollar.format(pizzaCost.getDiscountReduction()));
+			System.out.printf("%nCongratulations! You're eligible for a %s discount.",
+							  dollar.format(pizzaCost.getDiscountReduction()));
+			System.out.println("\nThe cost of your order is(including discount): "
+							   + dollar.format(pizzaCost.getPizzaCost()));
 		}
 		System.out.println("\nThe cost of your order is: " + dollar.format(pizzaCost.getPizzaCost()));
         System.out.println("The tax is: " + dollar.format(pizzaCost.getTax()));
         System.out.println("The total due is: " + dollar.format(pizzaCost.getTotalCostOfPizza()));
         System.out.println("\nYour order will be ready for pickup in 30 minutes.");
+
     }
 }
